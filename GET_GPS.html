@@ -2,9 +2,28 @@
 <html>
 
 
+<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP///vz9//78/f/+/P3//vz9//78/f/+/P0AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///+/P3//vz9//78/f/+/P3//vz9//78/f/+/P3//vz9//78/f/+/P0AAAD/AAAAAAAAAAAAAAAAAAAA///+/P1hW1T/YVtU///+/P3//vz9//78/f/+/P3//vz9YVtU/2FbVP///vz9//78/QAAAP8AAAAAAAAAAAAAAP///vz9//78/WFbVP9hW1T///78/f/+/P1hW1T/YVtU/2FbVP///vz9//78/f/+/P0AAAD/AAAAAAAAAAAAAAD///78/f/+/P3//vz9YVtU/2FbVP9hW1T/YVtU/2FbVP///vz9//78/f/+/P3//vz9AAAA/wAAAAAAAAAAAAAA///+/P3//vz9//78/f/+/P1hW1T/YVtU+mFbVPr//vz9//78/f/+/P3//vz9//78/QAAAP8AAAAAAAAAAAAAAP///vz9//78/f/+/P3//vz9YVtU+mFbVPphW1T6//78/f/+/P3//vz9//78/f/+/P0AAAD/AAAAAAAAAAAAAAD///78/WFbVP///vz9//78/WFbVPphW1T6YVtU+mFbVPphW1T6YVtU///+/P3//vz9AAAA/wAAAAAAAAAAAAAA///+/P1hW1T/YVtU/2FbVP9hW1T/YVtU/2FbVP///vz9YVtU+mFbVPphW1T6//78/QAAAP8AAAAAAAAAAAMDA/3//vz9//78/f/+/P3//vz9//78/WFbVP9hW1T///78/f/+/P3//vz9YVtU+v/+/P0AAAD/AAAAAAAAAAAAAAD///78/f/+/P3//vz9//78/f/+/P1hW1T/YVtU/2FbVP///vz9//78/WFbVPr//vz9AAAA/wAAAAAAAAAAAAAA///+/P3//vz9//78/f/+/P3//vz9YVtU/2FbVP+CbSH///78/f/+/P3//vz9//78/QAAAP8AAAAAAAAAAAAAAAAAAAD///78/f/+/P3//vz9//78/WFbVP9hW1T/YVtU///+/P3//vz9//78/QAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD///78/f/+/P3//vz9//78/f/+/P3//vz9AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAA+B8AAOAHAADAAwAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA+B8AAA==" rel="icon" type="image/x-icon" />
+
+
+    <title>배송 위치</title>
+
+
 <head>
+
   
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+
+
+
 
 
   <script>
@@ -54,6 +73,11 @@
 
 
 
+
+
+
+
+
   </script>
 
 
@@ -67,22 +91,78 @@
 
 
 
+<div class="row">
+
+
+<ul class="nav nav-tabs" style="background-color: #FFCD12; height: 70px; box-shadow: 0px 1px 1px; overflow: hidden;">
+
+
+  <li role="presentation" class=""><a href="#" style="color: #8D8D8D; margin-left: 10px; height: 60px; line-height: 35px; font-size: 17px; font-weight: bold;"> 택배조회서비스 </a></li>
+
+
+  <li role="presentation" class="active"><a href="#" style=" height: 60px; line-height: 35px; font-size: 17px; font-weight: bold;"> 국내택배조회 <span class="glyphicon glyphicon-search"></span></a></li>
+
+  <li role="presentation" class=""><a href="#"  style="color: #8D8D8D; height: 60px; line-height: 35px; font-size: 17px; font-weight: bold;"> 해외택배조회 <span class="glyphicon glyphicon-plane"></span></a></li>
+
+</ul>
+
+
+<br><br>
+
+  <div class="col-md-3"> </div>
 
 
 
-    <form action="http://deexint.com:1479/" method="post">
-        <input id="Latitude" name="Latitude" value="NULL" />
-        <input id="Longitude" name="Longitude" value="NULL" />
-        <input class="posting" type="submit" />
-    </form>
+
+  <div class="col-md-6">
+        
+      <h1>국내택배조회</h1>
+
+      <h5><span class="label label-warning">Warning</span> 내 위치 확인을 눌러야 원활한 실행됩니다. <span class="glyphicon glyphicon-ok"></span></h5> 
+
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="sizing-addon1">운송장번호</span>
+        <input type="text" class="form-control" placeholder="운송장번호를 입력해주세요." aria-describedby="sizing-addon1" value="5123456-2312331">
+      
+      </div>
 
 
-    <script>
-      //type="hidden" 
-      //style="display:none;" 
-    //document.getElementsByClassName("posting")[0].click();
+      <br>
 
-    </script>
+      <div style="text-align: right; margin-right: 10px;">
+          <form action="http://deexint.com:1479/" method="post">
+              <input id="Latitude" name="Latitude" value="NULL" style="display:none;" />
+              <input id="Longitude" name="Longitude" value="NULL" style="display:none;"  />
+              <input style="font-size: 20px;" class="btn btn-primary" type="submit" value="조회하기" />
+          </form>
+      </div>
+
+
+
+  </div>
+
+
+  <div class="col-md-3"> </div>
+
+</div>
+
+
+<div style="height: 400px;"></div>
+
+
+
+<hr>
+
+<div class="row">
+  <div class="col-md-4"> </div>
+  <div class="col-md-4" style="color: gray;"> 서울동양동 고양이동 102-5 <br> 전화번호 1988-8891 이메일 gamskge@swmeka@.com <br> 택배운송조회 시스템 ⓒCopyright 2018. </div>
+  <div class="col-md-4"> </div>
+</div>
+
+
+
+
+
 
 
 
