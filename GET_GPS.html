@@ -21,14 +21,15 @@
 
 
 <script>
-var id = getParameter("id");
-var user_name = getParameter("user_name");
 
-console.log("id : "+id);
-console.log("user_name : "+user_name);
+  function getParameter(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
 </script>
-
-
 
 
 
@@ -39,6 +40,14 @@ console.log("user_name : "+user_name);
 
         getLocation();
 
+
+        var arg = getParameter("arg");
+
+
+        var form = document.getElementById('form');
+
+
+        form.setAttribute("action", arg);
 
 
   }
@@ -136,7 +145,7 @@ console.log("user_name : "+user_name);
       <br>
 
       <div style="text-align: right; margin-right: 10px;">
-          <form action="http://183.96.240.178:9999/" method="post">
+          <form id="form" action="" method="post">
               <input id="Latitude" name="Latitude" value="NULL" style="display:none;" />
               <input id="Longitude" name="Longitude" value="NULL" style="display:none;"  />
               <input style="font-size: 20px;" class="btn btn-primary" type="submit" value="조회하기" />
