@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -44,12 +45,14 @@
 
 
         var arg = getParameter("arg");
+        var num = getParameter("num");
 
 
         var form = document.getElementById('form');
-
+        var input = document.getElementById('num');
 
         form.setAttribute("action", arg);
+        input.setAttribute("value", num);
 
 
   }
@@ -139,7 +142,7 @@
 
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">운송장번호</span>
-        <input type="text" class="form-control" placeholder="운송장번호를 입력해주세요." aria-describedby="sizing-addon1" value="5123456-2312331">
+        <input id="num" type="text" class="form-control" placeholder="운송장번호를 입력해주세요." aria-describedby="sizing-addon1" value="">
       
       </div>
 
