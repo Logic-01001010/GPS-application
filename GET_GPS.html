@@ -21,13 +21,13 @@ window.onload = function () {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(sending, showError);
+    navigator.geolocation.getCurrentPosition(getGPS, showError);
   }
 
 
 }
 
-function sending(position) {
+function getGPS(position) {
 
 
   document.getElementById('Latitude').value = position.coords.latitude;
