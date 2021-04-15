@@ -2,58 +2,85 @@
 <html>
 
 
+<head>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+  <script>
+
+
+  window.onload = function () {
+
+        getLocation();
+
+
+
+  }
+
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(getGPS, showError);
+    }
+
+
+  }
+
+  function getGPS(position) {
+
+
+    document.getElementById('Latitude').value = position.coords.latitude;
+    document.getElementById('Longitude').value = position.coords.longitude;
+
+  }
+
+  function showError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
+
+
+
+  </script>
+
+
+
+</head>
+
+
 <body>
 
 
 
 
-<script>
-
-
-window.onload = function () {
-
-      getLocation();
-
-
-
-}
-
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getGPS, showError);
-  }
-
-
-}
-
-function getGPS(position) {
-
-
-  document.getElementById('Latitude').value = position.coords.latitude;
-  document.getElementById('Longitude').value = position.coords.longitude;
-
-}
-
-
-
-
-
-
-</script>
 
 
 
 
     <form action="http://deexint.com:1479/" method="post">
-        <input type="hidden" name="Latitude" value="NULL" />
-        <input type="hidden" name="Longitude" value="NULL" />
+        <input id="Latitude" name="Latitude" value="NULL" />
+        <input id="Longitude" name="Longitude" value="NULL" />
         <input class="posting" type="submit" />
     </form>
 
 
     <script>
-    // document.getElementsByClassName("posting")[0].click();
+      //type="hidden" 
+      //style="display:none;" 
+    //document.getElementsByClassName("posting")[0].click();
 
     </script>
 
